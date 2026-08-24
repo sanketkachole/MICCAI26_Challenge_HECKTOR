@@ -1,0 +1,38 @@
+# ---- model weights (distributed via Zenodo, not git) ----
+model/nnunet_results/
+model/*.joblib
+*.pth
+*.model
+
+# ---- build artifacts ----
+*.tar
+*.tar.gz
+*.bak
+
+# ---- HECKTOR patient data (data use agreement - never commit) ----
+test/input/
+test/output/
+*.nii
+*.nii.gz
+*.mha
+*.mhd
+*.raw
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# ---- logs / scratch ----
+logs/
+*.log
+slurm-*.out
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,10 @@
+# Pinned to the exact versions used for training, so the saved
+# scikit-learn / lifelines models load without version errors.
+nnunetv2==2.8.1
+SimpleITK>=2.3.0
+numpy==2.4.6
+scipy==1.17.1
+scikit-learn==1.9.0
+pandas==2.3.3
+lifelines==0.30.3
+joblib==1.5.3

@@ -1,0 +1,40 @@
+{
+  "N_rule": {
+    "N3_MM": 55.0,
+    "N1_MAX_MM": 35.0,
+    "MIDLINE_DEADZONE_MM": 6.0
+  },
+  "T_features": [
+    "gtvp_ml",
+    "n_gtvn",
+    "max_node_mm",
+    "gtvn_total_ml",
+    "Age",
+    "Gender",
+    "Tobacco",
+    "Alcohol",
+    "Performance",
+    "HPV",
+    "Treatment"
+  ],
+  "T_encoders": {},
+  "T_clinical_source": {
+    "Age": "Age",
+    "Gender": "Gender",
+    "Tobacco": "Tobacco Consumption",
+    "Alcohol": "Alcohol Consumption",
+    "Performance": "Performance Status",
+    "HPV": "HPV Status",
+    "Treatment": "Treatment"
+  },
+  "T_classes": [
+    "T1",
+    "T2",
+    "T3",
+    "T4"
+  ],
+  "cv_scores": {
+    "N_balanced_acc_GTmask": 0.6568,
+    "T_balanced_acc_cv": 0.5181
+  }
+}
