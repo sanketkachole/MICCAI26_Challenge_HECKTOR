@@ -74,7 +74,7 @@ python patch_inference.py
 ```
 
 Radiomics extraction (`11_extract_radiomics.py`, `13_finish_stragglers.py`) is needed only to reproduce the negative ablations in the paper; the submitted system does not use radiomics.
-
+```
 ## 3. Repository layout
 
 MICCAI26_Challenge_HECKTOR/
@@ -94,7 +94,7 @@ MICCAI26_Challenge_HECKTOR/
 │   ├── README.md           # how to provide a case
 │   └── ehr.example.json    # clinical-record template (no patient data)
 └── README.md
-
+```
 ### Training scripts
 
 Core pipeline: `01_prepare_nnunet` (dataset prep), `03_staging` / `03b_staging_pred` (early staging on GT vs predicted masks), `07_oof_pred_metadata` (geometry from out-of-fold masks), `09_tune_nodes` (cleanup sweep), `35_train_final_staging` (final N and T models), `04_prognosis` (Cox model), plus `50_measure_disease_extent`, `51_crop_check`, and `crop_utils` for the memory-safe crop.
