@@ -55,7 +55,7 @@ bash scripts/test_run.sh       # run on a case placed under test/input
 ### Path B - Train from scratch
 
 Scripts in `training/` reproduce the full pipeline. Run in numeric order; paths are argparse defaults to override per environment. Slurm submitters (`.slurm`) accompany the heavier steps.
-
+The `.slurm` files are job scripts for a SLURM cluster. If you do not have a cluster, ignore them: the commands they run also work on a local GPU. Open the `.slurm` file for a step and run the lines below its `#SBATCH` header directly, or run the matching `.py` with the same arguments. Note that full nnU-Net training (5 folds, 250 epochs each) takes days on a single GPU, so most users will prefer Path A and only retrain if needed.
 ```
 01_prepare_nnunet.py            convert to nnU-Net dataset format
 05_train_nnunet_full.slurm      5-fold 3d_fullres, 250 epochs
@@ -77,16 +77,23 @@ Radiomics extraction (`11_extract_radiomics.py`, `13_finish_stragglers.py`) is n
 
 ## 3. Repository layout
 
-```
-inference.py            container entry point (crop, segment, geometry, heads)
-patch_inference.py      applies the staging-model changes to inference.py
-Dockerfile              container definition
-requirements.txt        python dependencies
-scripts/                build.sh, save.sh, test_run.sh
-model/                  staging_config.json + README (weights via Zenodo)
-training/               full reproduction pipeline (.py and .slurm)
-test/                   README + ehr.example.json (no patient data)
-```
+MICCAI26_Challenge_HECKTOR/
+├── inference.py            # container entry point (crop, segment, geometry, heads)
+├── patch_inference.py      # applies the staging-model changes to inference.py
+├── Dockerfile              # container definition
+├── requirements.txt        # python dependencies
+├── scripts/
+│   ├── build.sh            # docker build
+│   ├── save.sh             # docker save + tar the model folder
+│   └── test_run.sh         # run on a case under test/input
+├── model/
+│   ├── staging_config.json # config read by the container
+│   └── README.md           # weights are on Zenodo (see DOI)
+├── training/               # full reproduction pipeline (.py and .slurm)
+├── test/
+│   ├── README.md           # how to provide a case
+│   └── ehr.example.json    # clinical-record template (no patient data)
+└── README.md
 
 ### Training scripts
 
