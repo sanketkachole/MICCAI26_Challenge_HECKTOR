@@ -2,7 +2,8 @@
 
 Geometry-aware framework for joint tumor and nodal segmentation, TN staging, and recurrence-free survival prediction from head and neck PET/CT. Submitted to the **MICCAI 2026 HECKTOR challenge**.
 
-Sanket Kachole and Spyridon Bakas - Division of Computational Pathology, Indiana University School of Medicine. Corresponding author: spbakas@iu.edu
+**Team IUCompPath** - Sanket Kachole, Spyridon Bakas (Division of Computational
+Pathology, Indiana University School of Medicine). Contact: Spyridon Bakas (spbakas@iu.edu).
 
 - Challenge: https://hecktor26.grand-challenge.org/
 - Model weights (Zenodo): https://doi.org/10.5281/zenodo.22073791
