@@ -22,7 +22,7 @@ conda create -n hecktor python=3.11 && conda activate hecktor
 pip install -r requirements.txt
 ```
 
-Segmentation training and the tabular experiments ran on an HPC cluster (Slurm; GPU partition for nnU-Net, CPU partitions for the tabular work). The container was built and verified locally on a single NVIDIA RTX 6000 Ada (48 GB). The submitted container targets the Grand Challenge runtime: 1x NVIDIA T4 (16 GB VRAM), 8 vCPU, 32 GB RAM, 25 minutes per case, no network access.
+
 
 Two extra environments are needed only to reproduce the survival ablations:
 
